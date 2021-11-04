@@ -9,7 +9,9 @@ const Connection = typeorm.createConnection({
     password: process.env.PWD_DB,
     database: process.env.DATABASE_DB,
     entities: Entities.list(),
-    ssl: true,
+    extra: {
+        ssl: true
+   }
 
 })
 
