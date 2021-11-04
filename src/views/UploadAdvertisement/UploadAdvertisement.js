@@ -4,6 +4,7 @@ import Input from "@/components/Input/Input.vue"
 import ImportCsv from "@/components/ImportCsv/ImportCsv.vue"
 import axios from "@/axios.js"
 import {saveAs} from "file-saver"
+import config from "@/config.js"
 
 export default {
     name: "UploadAdvertisement",
@@ -45,7 +46,7 @@ export default {
                 const formData = new FormData()
                 formData.append("csvFile", this.csvFile)
                 try {
-                    const {data} = await axios.post("http://localhost:3000/advertisement/register", formData, {
+                    const {data} = await axios.post(`${config.SERVER_URL}/advertisement/register`, formData, {
                         headers: {
                             "Content-Type": "multipart/form-data"
                         }
