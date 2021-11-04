@@ -8,7 +8,9 @@ const Connection = typeorm.createConnection({
     username: process.env.USER_DB,
     password: process.env.PWD_DB,
     database: process.env.DATABASE_DB,
-    entities: Entities.list()
+    entities: Entities.list(),
+    ssl: true,
+
 })
 
 module.exports = Connection
