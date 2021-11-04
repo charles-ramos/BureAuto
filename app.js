@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser")
 // Invocação da aplicação
 const app = express()
 // Definições iniciais do app
-app.use(cors({credentials: true, origin: "https://bureauto.herokuapp.com"}))
+app.use(cors({credentials: true, origin: "*"}))
 app.use(cookieParser())
 app.use(express.json({limit: "50mb"}))
 app.use("/image", require("./controllers/ImageController"))
