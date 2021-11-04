@@ -12,8 +12,8 @@ const axiosConfig = axios.create({
 })
 
 const _onError = function(error) {
-    if (error.message.includes("code 401") && !window.location.href.includes("/login")) {
-        window.location.href = "/login"
+    if (error.message.includes("code 401") && !window.location.href.includes(`${config.CLIENT_URL}/login`)) {
+        window.location.href = `${config.CLIENT_URL}/login`
     }
 }
 
