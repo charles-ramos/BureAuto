@@ -9,10 +9,12 @@ const Connection = typeorm.createConnection({
     password: process.env.PWD_DB,
     database: process.env.DATABASE_DB,
     entities: Entities.list(),
-    extra: {
-        ssl: true
-   }
-
+    "ssl": true,
+    "extra": {
+        "ssl": {
+          "rejectUnauthorized": false
+        }
+      }
 })
 
 module.exports = Connection
